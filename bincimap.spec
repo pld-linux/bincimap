@@ -16,8 +16,8 @@ BuildRequires:	openssl-devel >= 0.9.6j
 PreReq:		rc-inetd
 Requires:	checkpassword-pam
 Conflicts:	courier-imap
-Conflicts:      cyrus-imapd
-Conflicts:      imap
+Conflicts:	cyrus-imapd
+Conflicts:	imap
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_bindir		%{_sbindir}
