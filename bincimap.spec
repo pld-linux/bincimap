@@ -1,12 +1,12 @@
 Summary:	IMAP4rev1 server for Maildir
 Summary(pl):	Serwer IMAP dla Maildirów
 Name:		bincimap
-Version:	1.2.11final
+Version:	1.2.12final
 Release:	1
 License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://www.bincimap.org/dl/tarballs/1.2/%{name}-%{version}.tar.bz2
-# Source0-md5:	e241d1459801ced20e42401f0210de49
+# Source0-md5:	ed40f8b5e560c0fd22fbbf346df1ee94
 Source1:	%{name}.inetd
 Source2:	%{name}-ssl.inetd
 Source3:	%{name}.pam
