@@ -40,7 +40,6 @@ skonfigurowania.
 %setup -q
 
 %build
-rm -f missing
 %{__aclocal}
 %{__autoconf}
 %{__autoheader}
@@ -53,11 +52,12 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd
 install -d $RPM_BUILD_ROOT/etc/pam.d
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-install %SOURCE1 $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap
-install %SOURCE2 $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap-ssl
-install %SOURCE3 $RPM_BUILD_ROOT/etc/pam.d/bincimap
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap-ssl
+install %{SOURCE3} $RPM_BUILD_ROOT/etc/pam.d/bincimap
 
 %clean
 rm -rf $RPM_BUILD_ROOT
