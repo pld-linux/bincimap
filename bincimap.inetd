@@ -5,4 +5,5 @@ PORT=143
 FLAGS=nowait
 USER=root
 SERVER=tcpd
-DAEMON=/usr/sbin/bincimap-up --conf=/etc/bincimap.conf --logtype=syslog -- /usr/bin/checkpassword-pam /usr/sbin/bincimapd
+DAEMON=/usr/sbin/bincimap-up
+DAEMONARGS="--conf=/etc/bincimap.conf --logtype=syslog -- /usr/bin/checkpassword-pam /usr/sbin/bincimapd"
