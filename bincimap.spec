@@ -1,14 +1,15 @@
 Summary:	IMAP4rev1 server for Maildir
 Summary(pl):	Serwer IMAP dla Maildirów
 Name:		bincimap
-Version:	1.1.8
-Release:	0.1
+Version:	1.2.7final
+Release:	0.2
 License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://www.bincimap.org/dl/tarballs/%{name}-%{version}.tar.bz2
-# Source0-md5:	5182a966c19101594e93014d9e4e9b96
+# Source0-md5:	c90fc8de62028fb6af6169a5737e9ea4
 Source1:	%{name}.inetd
 Source2:	%{name}-ssl.inetd
+Source3:	%{name}.pam
 URL:		http://www.bincimap.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -50,11 +51,13 @@ rm -f missing
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd
+install -d $RPM_BUILD_ROOT/etc/pam.d
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 install %SOURCE1 $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap
 install %SOURCE2 $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap-ssl
+install %SOURCE3 $RPM_BUILD_ROOT/etc/pam.d/bincimap
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -77,5 +80,6 @@ fi
 %config(noreplace) %verify(not size mtime md5) /etc/%{name}.conf
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/rc-inetd/bincimap
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/rc-inetd/bincimap-ssl
+%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/pam.d/bincimap
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man[15]/*
