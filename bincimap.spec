@@ -5,7 +5,7 @@ Version:	1.2.7final
 Release:	0.2
 License:	GPL v2
 Group:		Networking/Daemons
-Source0:	http://www.bincimap.org/dl/tarballs/%{name}-%{version}.tar.bz2
+Source0:	http://www.bincimap.org/dl/tarballs/1.2/%{name}-%{version}.tar.bz2
 # Source0-md5:	c90fc8de62028fb6af6169a5737e9ea4
 Source1:	%{name}.inetd
 Source2:	%{name}-ssl.inetd
