@@ -10,6 +10,8 @@ Source0:	http://www.bincimap.org/dl/tarballs/%{name}-%{version}.tar.bz2
 Source1:	%{name}.inetd
 Source2:	%{name}-ssl.inetd
 URL:		http://www.bincimap.org/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	openssl-devel >= 0.9.6j
 PreReq:		rc-inetd
 Requires:	checkpassword-pam
@@ -18,13 +20,20 @@ Conflicts:      cyrus-imapd
 Conflicts:      imap
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define _bindir %{_sbindir}
+%define		_bindir		%{_sbindir}
 
 %description
 Binc IMAP is a modular IMAP4rev1 server for Maildir. It strives to be
 stable, fast, flexible, and RFC compliant. It is designed to be
 familiar for qmail-pop3d users, uses checkpassword to authenticate,
 and it is very easy to set up.
+
+%description -l pl
+Binc IMAP to modularny serwer IMAP4rev1 dla Maildirów. Stara siê byæ
+stabilnym, szybkim, elastycznym i zgodnym z RFC. Zosta³ zaprojektowany
+tak, aby byæ przyjaznym dla u¿ytkowników qmail-pop3d, do
+uwierzytelniania u¿ywa checkpassword i jest bardzo prosty do
+skonfigurowania.
 
 %prep
 %setup -q
