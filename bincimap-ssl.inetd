@@ -1,0 +1,8 @@
+SERVICE_NAME=imaps
+SOCK_TYPE=stream
+PROTOCOL=tcp
+PORT=993
+FLAGS=nowait
+USER=root
+SERVER=tcpd
+DAEMON=/usr/sbin/bincimap-up --ssl --conf=/etc/bincimap.conf --logtype=syslog -- /usr/bin/checkpassword-pam /usr/sbin/bincimapd
