@@ -12,7 +12,7 @@ Source2:	%{name}-ssl.inetd
 URL:		http://www.bincimap.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	openssl-devel >= 0.9.6j
+BuildRequires:	openssl-devel >= 0.9.7d
 PreReq:		rc-inetd
 Requires:	checkpassword-pam
 Conflicts:	courier-imap
