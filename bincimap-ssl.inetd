@@ -6,4 +6,4 @@ FLAGS=nowait
 USER=root
 SERVER=tcpd
 DAEMON=/usr/sbin/bincimap-up
-DAEMONARGS="--ssl --conf=/etc/bincimap.conf --logtype=syslog -- /usr/bin/checkpassword-pam /usr/sbin/bincimapd"
+DAEMONARGS="--ssl --conf=/etc/bincimap.conf --logtype=syslog -- /usr/bin/checkpassword-pam -s bincimap -- /usr/sbin/bincimapd"
