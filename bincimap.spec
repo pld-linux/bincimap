@@ -13,6 +13,7 @@ Source3:	%{name}.pam
 URL:		http://www.bincimap.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libstdc++-devel
 BuildRequires:	openssl-devel >= 0.9.7d
 PreReq:		rc-inetd
 Requires:	checkpassword-pam
