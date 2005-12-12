@@ -15,7 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	openssl-devel >= 0.9.7d
-PreReq:		rc-inetd
+Requires:	rc-inetd
 Requires:	checkpassword-pam
 Conflicts:	courier-imap
 Conflicts:	cyrus-imapd
@@ -78,9 +78,9 @@ fi
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%config(noreplace) %verify(not size mtime md5) /etc/%{name}.conf
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/rc-inetd/bincimap
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/rc-inetd/bincimap-ssl
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/pam.d/bincimap
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/%{name}.conf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/rc-inetd/bincimap
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/rc-inetd/bincimap-ssl
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/pam.d/bincimap
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man[15]/*
