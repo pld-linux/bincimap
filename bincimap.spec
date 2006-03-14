@@ -15,8 +15,9 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	openssl-devel >= 0.9.7d
-Requires:	rc-inetd
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires:	checkpassword-pam
+Requires:	rc-inetd
 Conflicts:	courier-imap
 Conflicts:	cyrus-imapd
 Conflicts:	imap
@@ -64,15 +65,11 @@ install %{SOURCE3} $RPM_BUILD_ROOT/etc/pam.d/bincimap
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if [ -f /var/lock/subsys/rc-inetd ]; then
-	/etc/rc.d/init.d/rc-inetd reload 1>&2
-else
-	echo "Type \"/etc/rc.d/init.d/rc-inetd start\" to start inet server" 1>&2
-fi
+%service -q rc-inetd reload
 
 %postun
-if [ -f /var/lock/subsys/rc-inetd ]; then
-	/etc/rc.d/init.d/rc-inetd reload 1>&2
+if [ "$1" = 0 ]; then
+	%service -q rc-inetd reload
 fi
 
 %files
