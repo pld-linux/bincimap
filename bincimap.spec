@@ -1,5 +1,5 @@
 Summary:	IMAP4rev1 server for Maildir
-Summary(pl.UTF-8):   Serwer IMAP dla Maildirów
+Summary(pl.UTF-8):	Serwer IMAP dla Maildirów
 Name:		bincimap
 Version:	1.2.12final
 Release:	1
