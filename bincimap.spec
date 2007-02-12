@@ -1,5 +1,5 @@
 Summary:	IMAP4rev1 server for Maildir
-Summary(pl):	Serwer IMAP dla Maildirów
+Summary(pl.UTF-8):   Serwer IMAP dla MaildirÃ³w
 Name:		bincimap
 Version:	1.2.12final
 Release:	1
@@ -31,11 +31,11 @@ stable, fast, flexible, and RFC compliant. It is designed to be
 familiar for qmail-pop3d users, uses checkpassword to authenticate,
 and it is very easy to set up.
 
-%description -l pl
-Binc IMAP to modularny serwer IMAP4rev1 dla Maildirów. Stara siê byæ
-stabilnym, szybkim, elastycznym i zgodnym z RFC. Zosta³ zaprojektowany
-tak, aby byæ przyjaznym dla u¿ytkowników qmail-pop3d, do
-uwierzytelniania u¿ywa checkpassword i jest bardzo prosty do
+%description -l pl.UTF-8
+Binc IMAP to modularny serwer IMAP4rev1 dla MaildirÃ³w. Stara siÄ™ byÄ‡
+stabilnym, szybkim, elastycznym i zgodnym z RFC. ZostaÅ‚ zaprojektowany
+tak, aby byÄ‡ przyjaznym dla uÅ¼ytkownikÃ³w qmail-pop3d, do
+uwierzytelniania uÅ¼ywa checkpassword i jest bardzo prosty do
 skonfigurowania.
 
 %prep
