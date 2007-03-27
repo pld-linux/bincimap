@@ -2,7 +2,7 @@ Summary:	IMAP4rev1 server for Maildir
 Summary(pl.UTF-8):	Serwer IMAP dla Maildirów
 Name:		bincimap
 Version:	1.2.12final
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Networking/Daemons
 Source0:	http://www.bincimap.org/dl/tarballs/1.2/%{name}-%{version}.tar.bz2
@@ -61,6 +61,8 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap
 install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/rc-inetd/bincimap-ssl
 install %{SOURCE3} $RPM_BUILD_ROOT/etc/pam.d/bincimap
 
+touch $RPM_BUILD_ROOT/etc/security/blacklist.imap
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -79,5 +81,6 @@ fi
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/rc-inetd/bincimap
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/rc-inetd/bincimap-ssl
 %attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/pam.d/bincimap
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/security/blacklist.imap
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/man[15]/*
